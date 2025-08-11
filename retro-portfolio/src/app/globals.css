@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;  
+}
+
+html {
+  font-size: 62.5%;
+}
+
 @theme {
   --color-gray-light: #818181;
   --color-gray-medium: #c3c3c3;
