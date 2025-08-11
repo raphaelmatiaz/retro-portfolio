@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
+// import ModelViewer from "@/components/ModelViewer/ModelViewer"
 
 const KinitoPetBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -155,7 +156,10 @@ const KinitoPetBackground: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="hero-section" />;
+  return <div ref={mountRef} className="hero-section" >
+
+    
+  </div>;
 };
 
 export default KinitoPetBackground;
