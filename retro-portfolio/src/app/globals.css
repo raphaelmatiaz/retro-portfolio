@@ -36,4 +36,46 @@ body {
   --color-teal: #008080;
   --color-black: #000000;
   --color-pink: #ff0081;
+  
+  /* Animation settings - easily customizable */
+  --point-distance: 8px;
+  --point-duration: 1.5s;
+  --point-easing: ease-in-out;
+}
+
+/* Pointing hand animations */
+@keyframes point-left {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--point-distance));
+  }
+}
+
+@keyframes point-right {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-1 * var(--point-distance)));
+  }
+}
+
+.animate-point-left {
+  display: inline-block;
+  animation: point-left var(--point-duration) var(--point-easing) infinite;
+}
+
+.animate-point-right {
+  display: inline-block;
+  animation: point-right var(--point-duration) var(--point-easing) infinite;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-point-left,
+  .animate-point-right {
+    animation: none;
+  }
 }

@@ -62,8 +62,10 @@ function HeroGreeting() {
                 I'm a Junior Web Developer, Indie Game Developer, UX/UI Designer, Artist and Musician (yes, that's a lot)
             
                 <Button variant='raised' fullWidth className='min-h-fit mt-8' >
-                    <p className='text-3xl p-4'>
-                        &#x261B; Meet this Guy &#x261A;     
+                    <p className='text-3xl p-4 flex items-center justify-center gap-2'>
+                        <span className="animate-point-left">&#x261B;</span>
+                        <span className='px-2'>Meet this Guy</span>
+                        <span className="animate-point-right">&#x261A;</span>
                     </p>
                 </Button>
             
