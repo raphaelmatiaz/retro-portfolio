@@ -15,9 +15,9 @@ export default function Home() {
     <>
       <ThemeProvider theme={original}>
     
-        <div id="page-content-wrapper" className="min-h-screen bg-white p-8 mw max-w-screen" style={{ backgroundColor: 'var(--color-white)' }}>
+        <div id="page-content-wrapper" className="min-h-screen bg-white mw max-w-screen" style={{ backgroundColor: 'var(--color-white)' }}>
           <HeaderNavbar></HeaderNavbar>
-          <section className="hero">
+          <section className="hero absolute top-0">
             <div style={{ position: "relative" }}>
               
               <KinitoPetBackground />
