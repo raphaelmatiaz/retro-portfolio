@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+// import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+/* Pick a theme of your choice */
+import original from 'react95/dist/themes/original';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,11 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+
+        <body className="font-win95">
+          {children}
+        </body>
     </html>
   );
 }

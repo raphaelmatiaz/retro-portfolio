@@ -19,6 +19,13 @@ const config: Config = {
           'pink': 'var(--color-pink)',
         }
       },
+      fontFamily: {
+        'win95': [
+          'MS Sans Serif',
+          'Tahoma',
+          'sans-serif'
+        ],
+      },
     },
   },
   plugins: [],
