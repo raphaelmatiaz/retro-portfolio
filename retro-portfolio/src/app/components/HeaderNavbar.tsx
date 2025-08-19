@@ -38,44 +38,54 @@ function HeaderNavbar() {
                 RafaelMatias.dev
                 
             </WindowHeader>
-            <div id="nav-button-list" className='p-1 min-h-[48px]'>
-                <Button variant='menu' onClick={() => {
-    globalThis.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }}
->
-                    <Progman39 width={24} height={24} style={{ marginRight: 4 }} />
-                    Home
-                </Button>
-                <Button variant='menu' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
-                    <Main103 width={24} height={24} style={{ marginRight: 4 }} />
-                    Skills</Button>
-                <Button variant='menu' onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <MystifyYourMind100 width={24} height={24} style={{ marginRight: 4 }} />
-                    Projects</Button>
-                <Button variant='menu' onClick={() => document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <Systray306 width={24} height={24} style={{ marginRight: 4 }} />
-                    Technologies</Button>
-                <Button variant='menu' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <User width={24} height={24} style={{ marginRight: 4 }} />
-                    About</Button>
-                <Button variant='menu' onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <WindowAbc width={24} height={24} style={{ marginRight: 4 }} />
-                    Education</Button>
-                <Button variant='menu' onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <Progman14 width={24} height={24} style={{ marginRight: 4 }} />
-                    Experience</Button>
-                <Button variant='menu' onClick={() => document.getElementById('hobbies')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <Brush width={24} height={24} style={{ marginRight: 4 }} />
-                    Hobbies</Button>
-                <Button variant='menu' onClick={() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <Drvspace7 width={24} height={24} style={{ marginRight: 4 }} />
-                    Interests</Button>
-                <Button variant='menu' onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <Progman35 width={24} height={24} style={{ marginRight: 4 }} />
-                    Contact</Button>
-                <Button variant='menu' onClick={() => document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' })}>
-                        <FilePick width={24} height={24} style={{ marginRight: 4 }} />
-                    Resume</Button>
+
+            <div className="flex flex-row items-center justify-between">
+                <div id="nav-button-list" className='p-1 min-h-[48px]'>
+                    <Button variant='menu'
+                        onClick={() => { globalThis.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                    }}>
+                        <Progman39 width={24} height={24} style={{ marginRight: 4 }} />
+                        Home
+                    </Button>
+                    <Button variant='menu' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <Main103 width={24} height={24} style={{ marginRight: 4 }} />
+                        Skills</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <MystifyYourMind100 width={24} height={24} style={{ marginRight: 4 }} />
+                        Projects</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <Systray306 width={24} height={24} style={{ marginRight: 4 }} />
+                        Technologies</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <User width={24} height={24} style={{ marginRight: 4 }} />
+                        About</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <WindowAbc width={24} height={24} style={{ marginRight: 4 }} />
+                        Education</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <Progman14 width={24} height={24} style={{ marginRight: 4 }} />
+                        Experience</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('hobbies')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <Brush width={24} height={24} style={{ marginRight: 4 }} />
+                        Hobbies</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <Drvspace7 width={24} height={24} style={{ marginRight: 4 }} />
+                        Interests</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <Progman35 width={24} height={24} style={{ marginRight: 4 }} />
+                        Contact</Button>
+                    <Button variant='menu' onClick={() => document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <FilePick width={24} height={24} style={{ marginRight: 4 }} />
+                        Resume</Button>
+                </div>
+                <div id='socials' className='mr-4 flex gap-2'>
+                    <Button variant='raised' onClick={() => {
+                        window.open('https://github.com/raphaelmatiaz', '_blank')
+                    }}>Github</Button>
+                    <Button variant='raised'
+                     onClick={() => {
+                        window.open('https://www.linkedin.com/in/rafael-matias-80780226b/', '_blank')}}>LinkedIn</Button>
+                </div>
             </div>
         </nav>
         </>

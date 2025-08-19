@@ -39,11 +39,11 @@ export default function Home() {
           <section id="home" className=" top-0 left-0 w-full h-screen z-0"> 
             <div className="relative w-full h-full">
               <KinitoPetBackground />
-              <div id="3dModel-HeroPresentation-Wrapper" className="absolute top-0 left-0 w-full h-full z-30 flex flex-row items-center justify-center overflow-hidden">
+              <div id="3dModel-HeroPresentation-Wrapper" className="absolute top-[-64px] left-0 w-full h-full z-30 flex flex-row items-center justify-center overflow-hidden">
                 <ModelViewer
                   url="/3d-models/avatar.glb"
-                  width={550}
-                  height={750}
+                  width={650}
+                  height={1150}
                   enableManualZoom={false}
                   showScreenshotButton={false}
                   enableManualRotation={false}
@@ -59,7 +59,7 @@ export default function Home() {
           </section>
 
           {/* Content that flows over the fixed hero - starts after viewport height */}
-          <div className="relative z-10" style={{ marginTop: '100vh' }}>
+          <div className="relative z-10">
             <section id="skills" className="w-full min-h-screen bg-[var(--color-gray-light)] border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
               <p className="text-lg text-center">Skills section content coming soon...</p>
