@@ -163,3 +163,23 @@ const KinitoPetBackground: React.FC = () => {
 };
 
 export default KinitoPetBackground;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

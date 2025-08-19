@@ -61,7 +61,7 @@ function HeroGreeting() {
                 My Name is <strong className=''>Rafael Matias</strong> <br/>
                 I'm a Junior Web Developer, Indie Game Developer, UX/UI Designer, Artist and Musician (yes, that's a lot)
             
-                <Button variant='raised' fullWidth className='min-h-fit mt-8' >
+                <Button variant='raised' fullWidth className='min-h-fit mt-8' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
                     <p className='text-3xl p-4 flex items-center justify-center gap-2'>
                         <span className="animate-point-left">&#x261B;</span>
                         <span className='px-2'>Meet this Guy</span>
