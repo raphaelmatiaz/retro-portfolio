@@ -645,6 +645,8 @@ const KinitoPetBackground: React.FC = () => {
 
     // Add your GIF URLs here - each URL will create a floating square!
     const gifUrls = [
+      'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2toNHlnZWJzM3BjaHVtZHBpbW13ODY4bjIwZHIwMmlnY3FlYzU1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Hcw7rjsIsHcmk/giphy.gif', // classic keyboard cat
+      'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXY3ZXY1Z2FoM3Q5cTNhOHE1Y3lxbnQxeHNxZ3B3bnZpcXFkc3J6NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U7BxuF4pDyDUk/giphy.gif', // cats after anesthesia
       'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamZhNXZiMzY3bWFtZjI4amRpdDM1bDZkeXhoZTdqMXZxYzk5NWZmOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xAKhG9iFXynDh2LEg5/giphy.gif',
       'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamZhNXZiMzY3bWFtZjI4amRpdDM1bDZkeXhoZTdqMXZxYzk5NWZmOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l3q2IYN87QjIg51kc/giphy.gif',
       'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamZhNXZiMzY3bWFtZjI4amRpdDM1bDZkeXhoZTdqMXZxYzk5NWZmOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OeEVCJ2UqMQNO/giphy.gif',
