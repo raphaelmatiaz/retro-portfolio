@@ -13,12 +13,14 @@ import {
 } from 'react95';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
+
 /* Original Windows95 font (optional) */
 // import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 // import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 
 /* Pick a theme of your choice */
 import original from 'react95/dist/themes/original';
+import TextType from '@/components/TextType/TextType';
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -59,7 +61,17 @@ function HeroGreeting() {
             <div className="text-3xl p-8 bg-[var(--color-gray-light)]">
                 Hi, <br/> 
                 My Name is <strong className=''>Rafael Matias</strong> <br/>
-                I'm a Junior Web Developer, Indie Game Developer, UX/UI Designer, Artist and Musician (yes, that's a lot)
+                I'm &nbsp;  
+                <TextType
+                    
+                    text={[" a Junior Web Developer", "a Junior UX/UI Designer", " an Indie Game Developer", "a Musician and Artist"]}
+                    textColors={["#b400aeff", "#007cc4ff", "#0000ff", "#59007cff"]}
+                    typingSpeed={75}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="_"
+                />
+                
             
                 <Button variant='raised' fullWidth className='min-h-fit mt-8' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
                     <p className='text-3xl p-4 flex items-center justify-center gap-2'>
