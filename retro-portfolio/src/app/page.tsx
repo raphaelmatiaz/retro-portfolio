@@ -5,6 +5,7 @@ import KinitoPetBackground from "./components/KinitoPetBackground";
 import ModelViewer from "@/components/ModelViewer/ModelViewer"
 import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
+import ProjectCard from "./components/ProjectCard"
 import { ThemeProvider } from "styled-components";
 
 // My Components
@@ -62,7 +63,6 @@ export default function Home() {
           <div className="relative z-10">
             <section id="skills" className="w-full min-h-screen bg-[var(--color-gray-light)] border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
-              <p className="text-lg text-center">Skills section content coming soon...</p>
 
               <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
                 <div
@@ -182,8 +182,15 @@ export default function Home() {
             </section>
             
             <section id="projects" className="w-full min-h-screen bg-[var(--color-blue)] text-white border-[4px] border-[var(--color-gray-medium)] p-8">
-              <h2 className="text-4xl font-bold mb-8 text-center section-title">Projects</h2>
-              <p className="text-lg text-center">Projects section content coming soon...</p>
+              <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+              {/* <p className="text-lg text-center">Projects section content coming soon...</p> */}
+              <span>
+                <h3 className="text-2xl font-bold mb-8">Learning Projects</h3>
+              <ProjectCard></ProjectCard>
+
+                <h3>Serious Projects</h3>
+              
+              </span>
             </section>
             
             <section id="technologies" className="w-full min-h-screen bg-[var(--color-gray-medium)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
@@ -194,6 +201,10 @@ export default function Home() {
             <section id="about" className="w-full min-h-screen bg-[var(--color-teal)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">About</h2>
               <p className="text-lg text-center">About section content coming soon...</p>
+              <p>Hi, I'm Rafael Matias, I'm a person.</p>
+              <p>We do not know each other (probably), but know that we live in the same planet and we're both going to die! :D (probably)</p>
+              <p>I make stuff, like code, websites, and games, and I just learn and solve problems, thats what I do for cash.</p>
+              <p>I have asperger's syndrome, I'm autistic.</p>
             </section>
             
             <section id="education" className="w-full min-h-screen bg-[var(--color-pink)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
