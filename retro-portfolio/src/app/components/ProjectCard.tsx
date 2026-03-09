@@ -22,7 +22,7 @@ import {
 //   }
 // `;
 
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiInstagram } from "react-icons/si";
 
 
 interface ProjectCardProps {
@@ -66,13 +66,13 @@ function ProjectCard(props: ProjectCardProps) {
                         ))}
                     </div>
                     {props.projectGithubLink ? 
-                        <Button onClick={() => window.open(`${props.projectGithubLink}`, "blank")}
+                        <Button className="flex justify-center content-center" onClick={() => window.open(`${props.projectGithubLink}`, "blank")}
                             ><SiGithub className="mr-2"></SiGithub> Github
                         </Button> : <></>}
 
                     {props.projectInstagramLink ? 
-                        <Button onClick={() => window.open(`${props.projectInstagramLink}`, "blank")}
-                            >Instagram
+                        <Button className="flex justify-center content-center" onClick={() => window.open(`${props.projectInstagramLink}`, "blank")}
+                            ><SiInstagram className="mr-2"></SiInstagram> Instagram
                         </Button> : <></>}
                 </div>
                 <br />
