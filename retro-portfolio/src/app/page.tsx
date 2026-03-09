@@ -16,7 +16,7 @@ import SkillCard from "./components/SkillCard";
 /* Pick a theme of your choice */
 import original from 'react95/dist/themes/original';
 
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython } from "react-icons/si";
 import {
   Button,
   MenuList,
@@ -46,6 +46,9 @@ const techLogos = [
   { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
   { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
   { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiUnity />, title: "Unity 6", href: "https://unity.com" },
+  { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
 ];
 
   return (
@@ -75,37 +78,31 @@ const techLogos = [
                 <HeroGreeting></HeroGreeting>
               </div>
             </div>
+
+
+
+          </section>
+          <section className="w-full bg-[var(--color-gray-light)] p-4  border-[var(--color-gray-medium)]">
+            <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
+               <LogoLoop
+                  logos={techLogos}
+                  speed={100}
+                  direction="left"
+                  logoHeight={60}
+                  gap={60}
+                  hoverSpeed={0}
+                  scaleOnHover={false}
+                  fadeOut={false}
+                  fadeOutColor="#ffffff"
+                  ariaLabel="Technology partners"
+                />
+              </div>
           </section>
 
           {/* Content that flows over the fixed hero - starts after viewport height */}
           <div className="relative z-10">
             <section id="skills" className="w-full min-h-screen bg-[var(--color-gray-light)] border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
-
-              <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
-               <LogoLoop
-                  logos={techLogos}
-                  speed={100}
-                  direction="left"
-                  logoHeight={100}
-                  gap={60}
-                  hoverSpeed={0}
-                  scaleOnHover
-                  fadeOut={false}
-                  fadeOutColor="#ffffff"
-                  ariaLabel="Technology partners"
-                />
-                <div
-                  id="positioner"
-                  className="max-w-[68%] flex items-left justify-left flex-wrap gap-4"
-                >
-                  
-                </div>
-              </div>
-
-             
-              
-              
             </section>
             
             <section id="projects" className="w-full min-h-screen bg-[var(--color-blue)] text-white border-[4px] border-[var(--color-gray-medium)] p-8">
