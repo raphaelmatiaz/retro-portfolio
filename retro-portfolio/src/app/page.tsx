@@ -7,6 +7,7 @@ import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
 import ProjectCard from "./components/ProjectCard"
 import { ThemeProvider } from "styled-components";
+import LogoLoop from '../components/LogoLoop';
 
 // My Components
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ import SkillCard from "./components/SkillCard";
 /* Pick a theme of your choice */
 import original from 'react95/dist/themes/original';
 
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript } from "react-icons/si";
 import {
   Button,
   MenuList,
@@ -30,6 +32,22 @@ import {
 import styled from 'styled-components';
 
 export default function Home() {
+
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+];
+
   return (
     <>
       <ThemeProvider theme={original}>
@@ -65,114 +83,23 @@ export default function Home() {
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
 
               <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
+               <LogoLoop
+                  logos={techLogos}
+                  speed={100}
+                  direction="left"
+                  logoHeight={100}
+                  gap={60}
+                  hoverSpeed={0}
+                  scaleOnHover
+                  fadeOut={false}
+                  fadeOutColor="#ffffff"
+                  ariaLabel="Technology partners"
+                />
                 <div
                   id="positioner"
                   className="max-w-[68%] flex items-left justify-left flex-wrap gap-4"
                 >
-                  <SkillCard
-                    cardName="HTML5"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                    comfortLevel="Solid"
-                    progress={90}
-                  />
-
-                  <SkillCard
-                    cardName="CSS3"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                    comfortLevel="Solid"
-                    progress={90}
-                  />
-
-                  <SkillCard
-                    cardName="JavaScript"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="TypeScript"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={50}
-                  />
-
-                  <SkillCard
-                    cardName="Next.js"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={55}
-                  />
-
-                  <SkillCard
-                    cardName="React"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="TailwindCSS"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="Node.js"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                    comfortLevel="Beginner"
-                    progress={40}
-                  />
-
-                  <SkillCard
-                    cardName="Figma"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={55}
-                  />
-
-                  <SkillCard
-                    cardName="Docker"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                    comfortLevel="Beginner"
-                    progress={35}
-                  />
-
-                  <SkillCard
-                    cardName="Python"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                    comfortLevel="Beginner"
-                    progress={30}
-                  />
-
-                  <SkillCard
-                    cardName="Linux"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                    comfortLevel="Beginner"
-                    progress={30}
-                  />
-
-                  <SkillCard
-                    cardName="Git"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                    comfortLevel="Good"
-                    progress={60}
-                  />
-
-                  <SkillCard
-                    cardName="GitHub"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    comfortLevel="Good"
-                    progress={60}
-                  />
-
-                  <SkillCard
-                    cardName="Unity 6"
-                    cardImage="https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021.svg"
-                    comfortLevel="Beginner"
-                    progress={35}
-                  />
+                  
                 </div>
               </div>
 
