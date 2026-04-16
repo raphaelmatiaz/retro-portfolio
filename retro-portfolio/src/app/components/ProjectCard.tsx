@@ -22,10 +22,26 @@ import {
 //   }
 // `;
 
-function ProjectCard() {
+import { SiGithub, SiInstagram } from "react-icons/si";
+
+
+interface ProjectCardProps {
+    projectName: string;
+    projectNumber: number;
+    projectSummary: string;
+    projectImage: string;
+    projectTechnologies: string[];
+    projectFeatures?: string[];
+    projectCtaText: string;
+    projectCtaLink: string;
+    projectGithubLink?: string;
+    projectInstagramLink?: string;
+}
+
+function ProjectCard(props: ProjectCardProps) {
   return (
     <Window className='min-h-fit'>
-        <div id="main-div" className="w-[600] min-h-fit max-h-[400] bg-[#808080] mx-auto box-shadow-lg shadow-lg">
+        <div id="main-div" className="w-[40vw] min-h-fit max-h-[400] bg-[#808080] mx-auto box-shadow-lg shadow-lg">
             <div id="main-div-navbar" className="flex flex-row items-center justify-between bg-gradient-to-r from-[#BA1AA7] to-[#4F1ABA]">
                 <p className="text-white text-2xl">Project.exe</p>
                 <div className="flex items-center space-x-0.5">
@@ -40,21 +56,59 @@ function ProjectCard() {
             </div>
             <div className="text-3xl p-8 bg-[var(--color-gray-light)]">
 
-                <p>Random Meme Generator:</p>
+                <p className="font-bold">{props.projectName}</p>
+                <div className='flex justify-between content-center py-4 border-b-2 border-b-[var(--color-gray-medium)]'>
+                    <div>
+                        {props.projectTechnologies.map((tech, index) => (
+                            <span key={index} className="text-base inline-block bg-[var(--color-gray-medium)] text-white px-2 py-1 pt-1 rounded mr-2">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                    {props.projectGithubLink ? 
+                        <Button className="flex justify-center content-center" onClick={() => window.open(`${props.projectGithubLink}`, "blank")}
+                            ><SiGithub className="mr-2"></SiGithub> Github
+                        </Button> : <></>}
+
+                    {props.projectInstagramLink ? 
+                        <Button className="flex justify-center content-center" onClick={() => window.open(`${props.projectInstagramLink}`, "blank")}
+                            ><SiInstagram className="mr-2"></SiInstagram> Instagram
+                        </Button> : <></>}
+                </div>
                 <br />
-                <div className='flex'>
-                    <p>A simple web app coded in vanilla JS, that generates absurd memes by combining randomized stock images and english words. </p>
-                    <img src="images/my-modulus.webp"
+                <div className='flex flex-col'>
+                     <img src={props.projectImage}
                         alt="Meme sample generated through my web app"
                         title='Sample meme from this app'
-                        className='w-64'
+                        className='w-full h-auto object-contain mb-4'
                     />
+                    <p className="text-lg">
+                        <p className='font-semibold pb-2 ' >Summary</p>
+                        <p className='mb-4'>{props.projectSummary}</p>
+                    </p>
+                   
+                   
                 </div>
 
-                <Button variant='raised' fullWidth className='min-h-fit mt-8' onClick={() => window.open("https://raphaelmatiaz.github.io/Absurd-Meme-Generator/", "blank")}>
-                    <p className='text-3xl p-4 flex items-center justify-center gap-2'>
+                 <ul className="list-disc text-base">
+                    <p className='font-semibold pb-2'>Features</p>
+                        {props.projectFeatures?.map((feature, index) => (
+                            <li key={index} className=''>
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                
+
+                <Button 
+                    variant='raised' 
+                    fullWidth 
+                    className='min-h-fit mt-8' 
+                    onClick={() => window.open(`${props.projectCtaLink}`, "blank")}>
+                    <p 
+                        className='text-xl p-4 flex items-center justify-center gap-2'>
                         <span className="animate-point-left">&#x261B;</span>
-                        <span className='px-2'>Try it out!</span>
+                        <span className='px-2'>{props.projectCtaText}</span>
                         <span className="animate-point-right">&#x261A;</span>
                     </p>
                 </Button>

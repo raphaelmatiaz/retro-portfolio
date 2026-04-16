@@ -7,6 +7,7 @@ import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
 import ProjectCard from "./components/ProjectCard"
 import { ThemeProvider } from "styled-components";
+import LogoLoop from '../components/LogoLoop';
 
 // My Components
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ import SkillCard from "./components/SkillCard";
 /* Pick a theme of your choice */
 import original from 'react95/dist/themes/original';
 
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython } from "react-icons/si";
 import {
   Button,
   MenuList,
@@ -30,6 +32,25 @@ import {
 import styled from 'styled-components';
 
 export default function Home() {
+
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiUnity />, title: "Unity 6", href: "https://unity.com" },
+  { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+];
+
   return (
     <>
       <ThemeProvider theme={original}>
@@ -57,139 +78,110 @@ export default function Home() {
                 <HeroGreeting></HeroGreeting>
               </div>
             </div>
+
+
+
+          </section>
+          <section className="w-full bg-[var(--color-gray-light)] p-4  border-[var(--color-gray-medium)]">
+            <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
+               <LogoLoop
+                  logos={techLogos}
+                  speed={100}
+                  direction="left"
+                  logoHeight={60}
+                  gap={60}
+                  hoverSpeed={0}
+                  scaleOnHover={false}
+                  fadeOut={false}
+                  fadeOutColor="#ffffff"
+                  ariaLabel="Technology partners"
+                />
+              </div>
           </section>
 
           {/* Content that flows over the fixed hero - starts after viewport height */}
           <div className="relative z-10">
             <section id="skills" className="w-full min-h-screen bg-[var(--color-gray-light)] border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
-
-              <div id="skill-card-container" className="w-full h-fit mt-8 flex items-center justify-center">
-                <div
-                  id="positioner"
-                  className="max-w-[68%] flex items-left justify-left flex-wrap gap-4"
-                >
-                  <SkillCard
-                    cardName="HTML5"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                    comfortLevel="Solid"
-                    progress={90}
-                  />
-
-                  <SkillCard
-                    cardName="CSS3"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                    comfortLevel="Solid"
-                    progress={90}
-                  />
-
-                  <SkillCard
-                    cardName="JavaScript"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="TypeScript"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={50}
-                  />
-
-                  <SkillCard
-                    cardName="Next.js"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={55}
-                  />
-
-                  <SkillCard
-                    cardName="React"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="TailwindCSS"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-                    comfortLevel="Good"
-                    progress={65}
-                  />
-
-                  <SkillCard
-                    cardName="Node.js"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                    comfortLevel="Beginner"
-                    progress={40}
-                  />
-
-                  <SkillCard
-                    cardName="Figma"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                    comfortLevel="Intermediate"
-                    progress={55}
-                  />
-
-                  <SkillCard
-                    cardName="Docker"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                    comfortLevel="Beginner"
-                    progress={35}
-                  />
-
-                  <SkillCard
-                    cardName="Python"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                    comfortLevel="Beginner"
-                    progress={30}
-                  />
-
-                  <SkillCard
-                    cardName="Linux"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                    comfortLevel="Beginner"
-                    progress={30}
-                  />
-
-                  <SkillCard
-                    cardName="Git"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                    comfortLevel="Good"
-                    progress={60}
-                  />
-
-                  <SkillCard
-                    cardName="GitHub"
-                    cardImage="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    comfortLevel="Good"
-                    progress={60}
-                  />
-
-                  <SkillCard
-                    cardName="Unity 6"
-                    cardImage="https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021.svg"
-                    comfortLevel="Beginner"
-                    progress={35}
-                  />
-                </div>
-              </div>
-
-             
-              
-              
             </section>
             
             <section id="projects" className="w-full min-h-screen bg-[var(--color-blue)] text-white border-[4px] border-[var(--color-gray-medium)] p-8">
-              <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
-              {/* <p className="text-lg text-center">Projects section content coming soon...</p> */}
+              <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
+             
               <span>
-                <h3 className="text-2xl font-bold mb-8">Learning Projects</h3>
-              <ProjectCard></ProjectCard>
+                <h3 className="text-2xl font-bold mb-8 text-center">Learning Projects (for fun and learning 😎)</h3>
+                <div className="flex flex-wrap justify-center gap-8">
+                  <ProjectCard
+                    projectSummary="A simple web app that generates absurd memes by combining randomized stock images with randomized english words."
+                    projectName="Absurd Meme Generator"
+                    projectImage="/images/meme-generator.webp"
+                    projectNumber={1}
+                    projectTechnologies={["HTML", "CSS", "JavaScript"]}
+                    projectFeatures={["Procedural meme generation", "«Download Meme» Button"]}
+                    projectCtaText="Generate a fun meme!"
+                    projectCtaLink="https://raphaelmatiaz.github.io/Absurd-Meme-Generator/"
+                    projectGithubLink="https://github.com/raphaelmatiaz/Absurd-Meme-Generator"
+                  ></ProjectCard>
+                  <ProjectCard
+                    projectSummary="A web app that creates minimalist randomized abstract art. Based on the JavaScript math.random method, input settings allow you to explore the output and create unique patterns."
+                    projectName="Abstract Art Generator"
+                    projectImage="/images/art-generator.webp"
+                    projectNumber={1}
+                    projectTechnologies={["HTML", "CSS", "JavaScript"]}
+                    projectFeatures={["Generate Meme Button", "Download Meme Button"]}
+                    projectCtaText="Create some crazy art!"
+                    projectCtaLink="https://raphaelmatiaz.github.io/Abstract-Art-Generator/"
+                    projectGithubLink="https://github.com/raphaelmatiaz/Abstract-Art-Generator"
+                  ></ProjectCard>
+                  <ProjectCard
+                    projectSummary="A narrative focused, choices matter, text-based indie game inspired by the 'Dark Souls' game series. Played entirely inside the terminal. Its the first game I ever created!"
+                    projectName="ETIC Souls"
+                    projectImage="/images/etic-souls.webp"
+                    projectNumber={1}
+                    projectTechnologies={["Python"]}
+                    projectFeatures={["Custom character creation","Logical tree of choices and their consequences", "Ascii art UI"]}
+                    projectCtaText="View Installation Instructions"
+                    projectCtaLink="https://github.com/raphaelmatiaz/ETIC-SOULS"
+                    projectGithubLink="https://github.com/raphaelmatiaz/ETIC-SOULS"
+                  ></ProjectCard>
+                  <ProjectCard
+                    projectSummary="Bombr is a social network platform designed as a simplified Instagram clone with a unique twist: users can only and exclusively post content (bomb!) on their friends' profiles instead of their own."
+                    projectName="Bombr"
+                    projectImage="/images/bombr.webp"
+                    projectNumber={1}
+                    projectTechnologies={["TypeScript", "React", "CSS", "Next.js",]}
+                    projectFeatures={["Login / Register / Logout","Google, Discord and Github OAuth methods", "Homepage Feed", "Post pictures, gifs and text on your friends profiles", "Personal Profile for each user", "Home, User Search, Post, Notifications and profile routes", "Responsive Design (mobile / tablet / desktop)"]}
+                    projectCtaText="Watch a Video Showcase!"
+                    projectCtaLink="https://www.youtube.com/watch?v=b_NQkbWEgDk&t=1s"
+                    projectGithubLink="https://github.com/raphaelmatiaz/Bombr"
+                  ></ProjectCard>
+                </div>
 
-                <h3>Serious Projects</h3>
-              
+                <h3 className="text-2xl font-bold mb-8 text-center mt-64">Serious Projects (oouh Very Serious  🧐)</h3>
+                <div className="flex flex-wrap justify-center gap-8">
+                  <ProjectCard
+                    projectSummary="A technical challenge consisting in the design refactor and its code implementation, for a 2 sided marketplace SAAS platform."
+                    projectName="LicitaNow (interview challenge)"
+                    projectImage="/images/licita-now.webp"
+                    projectNumber={1}
+                    projectTechnologies={["HTML", "CSS", "JavaScript"]}
+                    projectFeatures={["Figma ReDesign", "Responsive Design (mobile, tablet, desktop)"]}
+                    projectCtaText="View my Solution!"
+                    projectCtaLink="https://raphaelmatiaz.github.io/LicitaNowChallenge/"
+                    projectGithubLink="https://github.com/raphaelmatiaz/LicitaNowChallenge"
+                  ></ProjectCard>
+                  <ProjectCard
+                    projectSummary="An indie 3D puzzle platformer game, set in an uncanny laundromat, with unique puzzle gameplay and mechanics, mainly inspired by the 'Portal' game series. With pshichological horror mood and a Nietzchean-Lovecraftian metaphorical narrative, LAUNDROMAT is my very first commercially aimed game, currently in development by solo developer: me! 🙂"
+                    projectName="LAUNDROMAT"
+                    projectImage="/images/laundromat.webp"
+                    projectNumber={1}
+                    projectTechnologies={["C#", "Unity Engine 6"]}
+                    projectFeatures={["3D Player Controller", "Gravity flipper", "Levitation of objects", "Numerous puzzle mechanics (pressure plates, buttons...)","Diverse enviroment hazards to mess with the player", "Original Soundtrack", "Original story", "...and many other things that would fill the whole page if I listed them all..."]}
+                    projectCtaText="Wishlist the game on Steam!"
+                    projectCtaLink="https://store.steampowered.com/app/3936500/Laundromat/"
+                    projectInstagramLink="https://www.instagram.com/laundromat_game/"
+                  ></ProjectCard>
+                </div>
               </span>
             </section>
             

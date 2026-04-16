@@ -34,7 +34,7 @@ function HeaderNavbar() {
     return(
         <>
         <nav className="flex flex-col bg-[var(--color-gray-light)] border sticky top-0 z-50 border-[var(--color-gray-medium)]">
-            <WindowHeader className='window-title w-full'>
+            <WindowHeader className='window-title w-full' active="true">
                 RafaelMatias.dev
                 
             </WindowHeader>
