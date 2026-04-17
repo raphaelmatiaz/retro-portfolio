@@ -14,9 +14,9 @@ import {
 import styled from 'styled-components';
 
 // Icon stuff
-import '@react95/core/GlobalStyle';
+// import '@react95/core/GlobalStyle';
 import '@react95/core/themes/win95.css';
-import '@react95/icons/icons.css';
+// import '@react95/icons/icons.css';
 
 import { Computer, Folder, Settings, InfoBubble, 
     User, Notepad, Star, Mail, Phone, Wordpad, Memory, 
@@ -47,6 +47,9 @@ function HeaderNavbar() {
                         <Progman39 width={24} height={24} style={{ marginRight: 4 }} />
                         Home
                     </Button>
+                    <Button variant='menu' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <User width={24} height={24} style={{ marginRight: 4 }} />
+                        About</Button>
                     <Button variant='menu' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
                         <Main103 width={24} height={24} style={{ marginRight: 4 }} />
                         Skills</Button>
@@ -56,9 +59,7 @@ function HeaderNavbar() {
                     <Button variant='menu' onClick={() => document.getElementById('technologies')?.scrollIntoView({ behavior: 'smooth' })}>
                             <Systray306 width={24} height={24} style={{ marginRight: 4 }} />
                         Technologies</Button>
-                    <Button variant='menu' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
-                            <User width={24} height={24} style={{ marginRight: 4 }} />
-                        About</Button>
+
                     <Button variant='menu' onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}>
                             <WindowAbc width={24} height={24} style={{ marginRight: 4 }} />
                         Education</Button>
@@ -81,10 +82,15 @@ function HeaderNavbar() {
                 <div id='socials' className='mr-4 flex gap-2'>
                     <Button variant='raised' onClick={() => {
                         window.open('https://github.com/raphaelmatiaz', '_blank')
-                    }}>Github</Button>
-                    <Button variant='raised'
-                     onClick={() => {
-                        window.open('https://www.linkedin.com/in/rafael-matias-80780226b/', '_blank')}}>LinkedIn</Button>
+                    }}>
+                        <img src="/images/icons/github.png" className='w-6 h-6 mr-2'></img>
+                         Github</Button>
+                    <Button 
+                        variant='raised'
+                        onClick={() => { window.open('https://www.linkedin.com/in/rafael-matias-80780226b/', '_blank')}}>
+                        <img src="/images/icons/linkedin.png" className='w-6 h-6 mr-2'></img>
+                        LinkedIn
+                    </Button>
                 </div>
             </div>
         </nav>

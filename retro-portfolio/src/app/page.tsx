@@ -19,7 +19,7 @@ import SkillCard from "./components/SkillCard";
 /* Pick a theme of your choice */
 import original from 'react95/dist/themes/original';
 
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython, SiBlender } from "react-icons/si";
 import {
   Button,
   MenuList,
@@ -50,6 +50,7 @@ const techLogos = [
   { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
   { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
   { node: <SiUnity />, title: "Unity 6", href: "https://unity.com" },
+  { node: <SiBlender />, title: "Unity 6", href: "https://www.blender.org/" },
   { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com" },
   { node: <SiPython />, title: "Python", href: "https://www.python.org" },
 ];

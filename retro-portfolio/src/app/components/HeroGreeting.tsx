@@ -47,15 +47,6 @@ function HeroGreeting() {
                         
                         </span>
                     </Button>
-                    {/* <button type="button" className="flex items-center justify-center px-0.5 w-8 h-8 bg-[#cac6cb] border border-white border-b-black border-r-black">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M480 480H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h448c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg>
-                    </button> */}
-                    {/* <button type="button" className="flex items-center justify-center w-8 h-8 bg-[#cac6cb] border border-white border-b-black border-r-black">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 21h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zm0-2V7h16l.001 12H4z"></path></svg>
-                    </button> */}
-                    {/* <button type="button" className="flex items-center justify-center w-8 h-8 bg-[#cac6cb] border border-white border-b-black border-r-black">
-                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" stroke-width="2" d="M7,7 L17,17 M7,17 L17,7"></path></svg>
-                    </button> */}
                 </div>
             </div>
             <div className="text-3xl p-8 bg-[var(--color-gray-light)]">
@@ -64,7 +55,7 @@ function HeroGreeting() {
                 I'm &nbsp;  
                 <TextType
                     
-                    text={[" a Junior Web Developer", "a Junior UX/UI Designer", " an Indie Game Developer", "a Musician and Artist"]}
+                    text={[" a Full-Stack Web Developer 💾", " an Indie Game Developer 👾", "a Musician and Artist 🎼🎨"]}
                     textColors={["#b400aeff", "#007cc4ff", "#0000ff", "#59007cff"]}
                     typingSpeed={75}
                     pauseDuration={1500}
@@ -73,7 +64,7 @@ function HeroGreeting() {
                 />
                 
             
-                <Button variant='raised' fullWidth className='min-h-fit mt-8' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button variant='raised' fullWidth className='min-h-fit mt-8' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
                     <p className='text-3xl p-4 flex items-center justify-center gap-2'>
                         <span className="animate-point-left">&#x261B;</span>
                         <span className='px-2'>Meet this Guy</span>
