@@ -9,6 +9,9 @@ import ProjectCard from "./components/ProjectCard"
 import { ThemeProvider } from "styled-components";
 import LogoLoop from '../components/LogoLoop';
 
+//ShadCN Components
+import { AsciiArt } from "@/components/ui/ascii-art";
+
 // My Components
 import Footer from "./components/Footer";
 import SkillCard from "./components/SkillCard";
@@ -64,7 +67,7 @@ const techLogos = [
               <div id="3dModel-HeroPresentation-Wrapper" className="absolute top-[-64px] left-0 w-full h-full z-30 flex flex-row items-center justify-center overflow-hidden">
                 <ModelViewer
                   url="/3d-models/avatar.glb"
-                  width={650}
+                  width={850}
                   height={1150}
                   enableManualZoom={false}
                   showScreenshotButton={false}
@@ -103,17 +106,28 @@ const techLogos = [
           <div className="relative z-10">
 
           <section id="about" className="w-full min-h-screen bg-[var(--color-teal)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
-            <h2 className="text-4xl font-bold mb-8 text-center">About</h2>
             <div className="flex">
-              <div className="flex-1 bg-red-500 h-128">
-                <p className="text-lg px-32 leading-[1.5rem] mb-4"> Hi, I’m Rafael Matias — a web developer who enjoys building things that live in the digital layer of the world.</p>
-                <p className="text-lg px-32 leading-[1.5rem] mb-4"> I’m driven by curiosity and a desire to understand how technology works beneath the surface. Whether it’s a responsive website, a full-stack application, or an indie game, I like turning ideas into working systems that are clean, reliable, and maintainable.</p>
-                <p className="text-lg px-32 leading-[1.5rem] mb-4">Outside of development, I’m also a musician and artist, which influences the way I approach problem-solving — combining structure, creativity, and attention to detail.</p>
-              </div>
-              <div 
-              
-                id="photo" 
-                className=" w-10 flex-1 bg-[url('/images/cv-pic-3.png')] bg-center">
+              {/* <div className="flex-1 bg-[var(--color-blue)] h-128 pl-64"> */}
+                <Window className='flex-1'>
+                  <div id="text-wrapper" className="pl-32 py-8">
+                    <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
+                    <p className="text-lg px-32 leading-[1.5rem] mb-4"> Hello there!👋 <br /> I’m Rafael Matias — a modern day wizard. I write strange things in weird languages and make digital magic happen!</p>
+                    <p className="text-lg px-32 leading-[1.5rem] mb-4"> More seriously: I'm a web developer with 3 years of experience based in Algarve, Portugal. Driven by a fascination for the invisible world that drives our modern society. <br /> I'm continuously learning how technology works beneath the surface, and tinkering with websites and applications. I like turning ideas into working systems and express my creativity through problem solving.</p>
+                    <p className="text-lg px-32 leading-[1.5rem] mb-4">Outside of development, I’m also a classicly trained musician, an artist and an Indie Game Developer which influences the way I approach projects — combining structure, creativity, and attention to detail.</p>
+                  </div>
+                </Window>
+              {/* </div> */}
+              <div id="photo" className=" w-10 flex-1 flex items-center justify-center">
+                <AsciiArt
+                  src="/images/cv-pic-3.png"
+                  resolution={226}
+                  color="var(--color-white)"
+                  animationStyle="fade"
+                  animationDuration={1.5}
+                  animateOnView={false}
+                  className="mx-auto aspect-square w-full max-w-lg bg-neutral-950"
+    />
+                {/* <img src="/images/cv-pic-3.png" className="max-w-sm" alt="" /> */}
               </div>
             </div>
            
