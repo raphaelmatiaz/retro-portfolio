@@ -101,6 +101,24 @@ const techLogos = [
 
           {/* Content that flows over the fixed hero - starts after viewport height */}
           <div className="relative z-10">
+
+          <section id="about" className="w-full min-h-screen bg-[var(--color-teal)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
+            <h2 className="text-4xl font-bold mb-8 text-center">About</h2>
+            <div className="flex">
+              <div className="flex-1 bg-red-500 h-128">
+                <p className="text-lg px-32 leading-[1.5rem] mb-4"> Hi, I’m Rafael Matias — a web developer who enjoys building things that live in the digital layer of the world.</p>
+                <p className="text-lg px-32 leading-[1.5rem] mb-4"> I’m driven by curiosity and a desire to understand how technology works beneath the surface. Whether it’s a responsive website, a full-stack application, or an indie game, I like turning ideas into working systems that are clean, reliable, and maintainable.</p>
+                <p className="text-lg px-32 leading-[1.5rem] mb-4">Outside of development, I’m also a musician and artist, which influences the way I approach problem-solving — combining structure, creativity, and attention to detail.</p>
+              </div>
+              <div 
+              
+                id="photo" 
+                className=" w-10 flex-1 bg-[url('/images/cv-pic-3.png')] bg-center">
+              </div>
+            </div>
+           
+          </section>
+
             <section id="skills" className="w-full min-h-screen bg-[var(--color-gray-light)] border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
             </section>
@@ -190,14 +208,7 @@ const techLogos = [
               <p className="text-lg text-center">Technologies section content coming soon...</p>
             </section>
             
-            <section id="about" className="w-full min-h-screen bg-[var(--color-teal)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
-              <h2 className="text-4xl font-bold mb-8 text-center">About</h2>
-              <p className="text-lg text-center">About section content coming soon...</p>
-              <p>Hi, I'm Rafael Matias, I'm a person.</p>
-              <p>We do not know each other (probably), but know that we live in the same planet and we're both going to die! :D (probably)</p>
-              <p>I make stuff, like code, websites, and games, and I just learn and solve problems, thats what I do for cash.</p>
-              <p>I have asperger's syndrome, I'm autistic.</p>
-            </section>
+            
             
             <section id="education" className="w-full min-h-screen bg-[var(--color-pink)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
               <h2 className="text-4xl font-bold mb-8 text-center">Education</h2>
