@@ -1,12 +1,10 @@
 'use client';
 
-import Image from "next/image";
 import KinitoPetBackground from "./components/KinitoPetBackground";
 import ModelViewer from "@/components/ModelViewer/ModelViewer"
 import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
 import ProjectCard from "./components/ProjectCard"
-import { ThemeProvider } from "styled-components";
 import LogoLoop from '../components/LogoLoop';
 
 //ShadCN Components
@@ -14,25 +12,9 @@ import { AsciiArt } from "@/components/ui/ascii-art";
 
 // My Components
 import Footer from "./components/Footer";
-import SkillCard from "./components/SkillCard";
 
-/* Pick a theme of your choice */
-import original from 'react95/dist/themes/original';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython, SiBlender } from "react-icons/si";
 
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiGithub, SiFigma, SiNodedotjs, SiJavascript, SiUnity, SiDjango, SiPython, SiBlender } from "react-icons/si";
-import {
-  Button,
-  MenuList,
-  MenuListItem,
-  ScrollView,
-  Separator,
-  Toolbar,
-  Window,
-  WindowContent,
-  WindowHeader,
-  ProgressBar,
-} from 'react95';
-import styled from 'styled-components';
 
 export default function Home() {
 
@@ -44,7 +26,7 @@ const techLogos = [
   { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
   { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
   { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { node: <SiCss />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
   { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
   { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
   { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
@@ -57,7 +39,7 @@ const techLogos = [
 
   return (
     <>
-      <ThemeProvider theme={original}>
+      {/* <ThemeProvider theme={original}> */}
         <div id="page-content-wrapper" className="relative">
           <HeaderNavbar></HeaderNavbar>
           
@@ -109,14 +91,14 @@ const techLogos = [
           <section id="about" className="w-full min-h-screen bg-[var(--color-teal)] text-white border-[4px] border-[var(--color-gray-medium)] p-8 section-title">
             <div className="flex">
               {/* <div className="flex-1 bg-[var(--color-blue)] h-128 pl-64"> */}
-                <Window className='flex-1'>
+                <div className='flex-1'>
                   <div id="text-wrapper" className="pl-32 py-8">
                     <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
                     <p className="text-lg px-32 leading-[1.5rem] mb-4"> Hello there!👋 <br /> I’m Rafael Matias — a modern day wizard. I write strange things in weird languages and make digital magic happen!</p>
                     <p className="text-lg px-32 leading-[1.5rem] mb-4"> More seriously: I'm a web developer with 3 years of experience based in Algarve, Portugal. Driven by a fascination for the invisible world that drives our modern society. <br /> I'm continuously learning how technology works beneath the surface, and tinkering with websites and applications. I like turning ideas into working systems and express my creativity through problem solving.</p>
                     <p className="text-lg px-32 leading-[1.5rem] mb-4">Outside of development, I’m also a classicly trained musician, an artist and an Indie Game Developer which influences the way I approach projects — combining structure, creativity, and attention to detail.</p>
                   </div>
-                </Window>
+                </div>
               {/* </div> */}
               <div id="photo" className=" w-10 flex-1 flex items-center justify-center">
                 <AsciiArt
@@ -140,6 +122,10 @@ const techLogos = [
             
             <section id="projects" className="w-full min-h-screen bg-[var(--color-blue)] text-white border-[4px] border-[var(--color-gray-medium)] p-8">
               <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
+
+            <div style={{ height: '600px', position: 'relative' }}>
+
+            </div>
              
               <span>
                 <h3 className="text-2xl font-bold mb-8 text-center">Learning Projects (for fun and learning 😎)</h3>
@@ -257,7 +243,7 @@ const techLogos = [
           </div>
           <Footer></Footer>
         </div>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 }
