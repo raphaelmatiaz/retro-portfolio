@@ -3,7 +3,15 @@
 import KinitoPetBackground from "./components/KinitoPetBackground";
 import Win95Button from "./components/Win95Button";
 
-import ModelViewer from "@/components/ModelViewer/ModelViewer"
+// import ModelViewer from "@/components/ModelViewer/ModelViewer"
+
+// Add this instead:
+import dynamic from "next/dynamic";
+const ModelViewer = dynamic(() => import("@/components/ModelViewer/ModelViewer"), {
+  ssr: false,
+  loading: () => null, // or a placeholder
+});
+
 import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
 import ProjectCard from "./components/ProjectCard"
@@ -104,7 +112,7 @@ const techLogos = [
                 </div>
               {/* </div> */}
               <div id="photo" className=" w-10 flex-1 flex items-center justify-center">
-                <AsciiArt
+                {/* <AsciiArt
                   src="/images/cv-pic-3.png"
                   resolution={226}
                   color="var(--color-white)"
@@ -112,8 +120,7 @@ const techLogos = [
                   animationDuration={1.5}
                   animateOnView={false}
                   className="mx-auto aspect-square w-full max-w-lg bg-neutral-950"
-    />
-                {/* <img src="/images/cv-pic-3.png" className="max-w-sm" alt="" /> */}
+    /> */}
               </div>
             </div>
            
@@ -246,7 +253,6 @@ const techLogos = [
           </div>
           <Footer></Footer>
         </div>
-      {/* </ThemeProvider> */}
     </>
   );
 }

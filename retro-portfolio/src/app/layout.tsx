@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
-/* Pick a theme of your choice */
-import original from 'react95/dist/themes/original';
 
 export const metadata: Metadata = {
   title: "RafaelMatias.dev",
@@ -18,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-        <body className="font-win95">
+        <body>
           {children}
         </body>
     </html>
