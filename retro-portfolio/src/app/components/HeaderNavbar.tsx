@@ -4,8 +4,9 @@ function HeaderNavbar() {
     return(
         <>
         <nav className="flex flex-col bg-[var(--color-gray-light)] border sticky top-0 z-50 border-[var(--color-gray-medium)]">
-            <div className='window-title w-full'>
-                RafaelMatias.dev
+            <div className='window-title w-full flex items-center text-2xl'>
+                <img src="/rm-logo.webp" className="w-18" alt="" />
+                <p>RafaelMatias.dev - version 0.0.1 </p>
                 
             </div>
 
