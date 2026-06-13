@@ -3,6 +3,7 @@
 import KinitoPetBackground from "./components/KinitoPetBackground";
 import Win95Button from "./components/Win95Button";
 
+
 // import ModelViewer from "@/components/ModelViewer/ModelViewer"
 
 // Add this instead:
@@ -50,11 +51,9 @@ const techLogos = [
   return (
     <>
         <div id="page-content-wrapper" className="relative">
-          <HeaderNavbar></HeaderNavbar>
-
-          <Win95Button></Win95Button>
           
-          {/* Fixed Hero Section - stays in viewport. add 'fixed' to create static effect*/}
+          <HeaderNavbar></HeaderNavbar>
+  
           <section id="home" className=" top-0 left-0 w-full h-screen z-0"> 
             <div className="relative w-full h-full">
               <KinitoPetBackground />
@@ -112,7 +111,7 @@ const techLogos = [
                 </div>
               {/* </div> */}
               <div id="photo" className=" w-10 flex-1 flex items-center justify-center">
-                {/* <AsciiArt
+                <AsciiArt
                   src="/images/cv-pic-3.png"
                   resolution={226}
                   color="var(--color-white)"
@@ -120,7 +119,7 @@ const techLogos = [
                   animationDuration={1.5}
                   animateOnView={false}
                   className="mx-auto aspect-square w-full max-w-lg bg-neutral-950"
-    /> */}
+    />
               </div>
             </div>
            
