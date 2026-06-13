@@ -1,6 +1,8 @@
 'use client';
 
 import KinitoPetBackground from "./components/KinitoPetBackground";
+import Win95Button from "./components/Win95Button";
+
 import ModelViewer from "@/components/ModelViewer/ModelViewer"
 import HeaderNavbar from "./components/HeaderNavbar";
 import HeroGreeting from "./components/HeroGreeting";
@@ -39,9 +41,10 @@ const techLogos = [
 
   return (
     <>
-      {/* <ThemeProvider theme={original}> */}
         <div id="page-content-wrapper" className="relative">
           <HeaderNavbar></HeaderNavbar>
+
+          <Win95Button></Win95Button>
           
           {/* Fixed Hero Section - stays in viewport. add 'fixed' to create static effect*/}
           <section id="home" className=" top-0 left-0 w-full h-screen z-0"> 
