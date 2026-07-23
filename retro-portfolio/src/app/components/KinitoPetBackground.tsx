@@ -661,7 +661,7 @@ const KinitoPetBackground: React.FC = () => {
       depthWrite: false,
     });
     const blissPlane = new THREE.Mesh(blissGeometry, blissMaterial);
-    blissPlane.position.set(0, 95, -280); // far behind the pyramids (which end at z ≈ -230)
+    blissPlane.position.set(-140, 58, -280); // far behind the pyramids, crest off-center to the left
     scene.add(blissPlane);
 
     // ── Minecraft-style blocky clouds ──
