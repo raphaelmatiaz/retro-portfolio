@@ -4,9 +4,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   RAFAEL95™ DESIGN SYSTEM
+   Win95 chrome × vaporwave × dreamcore × the old web
+   ============================================================ */
+
 *, *::before, *::after {
   box-sizing: border-box;
-
 }
 
 html {
@@ -15,9 +19,9 @@ html {
 }
 
 body {
-  font-family: 'MS Sans Serif', Tahoma, sans-serif;
-  font-size: 11px;
-  line-height: 1.2;
+  font-family: 'MS Sans Serif', Tahoma, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
@@ -25,86 +29,293 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background: var(--w95-teal);
+  color: #000;
 }
 
-/* h2 {
-  padding-top: 128px;
-} */
-
-.section-title {
-  padding: 128px 0 128px 0
-}
-
-/* Disable anti-aliasing for that crisp Windows 95/98 look */
+/* Crisp Windows 95/98 text */
 * {
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
-  --color-gray-light:#c3c3c3;
-  --color-gray-medium:#818181;
+  /* ---- Win95 chrome palette ---- */
+  --w95-silver: #c0c0c0;
+  --w95-silver-light: #dfdfdf;
+  --w95-white: #ffffff;
+  --w95-gray: #808080;
+  --w95-dark: #0a0a0a;
+  --w95-navy: #000080;
+  --w95-blue: #1084d0;
+  --w95-teal: #008080;
+  --w95-desktop: #007c7c;
+
+  /* ---- vaporwave palette ---- */
+  --vw-pink: #ff71ce;
+  --vw-cyan: #01cdfe;
+  --vw-purple: #b967ff;
+  --vw-mint: #05ffa1;
+  --vw-yellow: #fffb96;
+  --vw-sunset-1: #ffd319;
+  --vw-sunset-2: #ff2975;
+  --vw-sunset-3: #8c1eff;
+
+  /* ---- legacy tokens (hero + existing components) ---- */
+  --color-gray-light: #c0c0c0;
+  --color-gray-medium: #808080;
+  --color-gray-dark: #404040;
   --color-white: #fdffff;
   --color-blue: #010081;
   --color-teal: #008080;
   --color-black: #000000;
   --color-pink: #ff0081;
+  --color-red: #aa0000;
+  --color-orange: #d97700;
 
-  /* Animation settings - easily customizable */
+  /* Animation settings */
   --point-distance: 8px;
   --point-duration: 1.5s;
   --point-easing: ease-in-out;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* Pointing hand animations */
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+.font-pixel {
+  font-family: var(--font-pixel), 'Courier New', monospace;
+}
+
+.font-terminal {
+  font-family: var(--font-terminal), 'Courier New', monospace;
+}
+
+/* Chunky pixel headings with hard vaporwave drop shadows */
+.heading-95 {
+  font-family: var(--font-pixel), monospace;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 var(--vw-pink),
+    4px 4px 0 var(--w95-dark);
+  letter-spacing: 1px;
+}
+
+.heading-95-cyan {
+  text-shadow:
+    2px 2px 0 var(--vw-cyan),
+    4px 4px 0 var(--w95-dark);
+}
+
+/* ============================================================
+   BEVELS — the sacred geometry of 1995
+   ============================================================ */
+
+/* Raised: windows, buttons, panels */
+.bevel-out {
+  box-shadow:
+    inset -1px -1px 0 var(--w95-dark),
+    inset 1px 1px 0 var(--w95-white),
+    inset -2px -2px 0 var(--w95-gray),
+    inset 2px 2px 0 var(--w95-silver-light);
+}
+
+/* Sunken: pressed buttons, wells */
+.bevel-in {
+  box-shadow:
+    inset -1px -1px 0 var(--w95-white),
+    inset 1px 1px 0 var(--w95-dark),
+    inset -2px -2px 0 var(--w95-silver-light),
+    inset 2px 2px 0 var(--w95-gray);
+}
+
+/* Sunken text field / listbox */
+.bevel-field {
+  background: var(--w95-white);
+  box-shadow:
+    inset -1px -1px 0 var(--w95-white),
+    inset 1px 1px 0 var(--w95-gray),
+    inset -2px -2px 0 var(--w95-silver-light),
+    inset 2px 2px 0 var(--w95-dark);
+}
+
+/* Thin 1px versions for chips, dividers, status cells */
+.bevel-out-thin {
+  box-shadow:
+    inset -1px -1px 0 var(--w95-gray),
+    inset 1px 1px 0 var(--w95-white);
+}
+
+.bevel-in-thin {
+  box-shadow:
+    inset -1px -1px 0 var(--w95-white),
+    inset 1px 1px 0 var(--w95-gray);
+}
+
+/* ============================================================
+   WIN95 WIDGETS
+   ============================================================ */
+
+.w95-titlebar {
+  background: linear-gradient(90deg, var(--w95-navy), var(--w95-blue));
+  color: #fff;
+}
+
+.w95-titlebar-inactive {
+  background: linear-gradient(90deg, var(--w95-gray), #b5b5b5);
+  color: var(--w95-silver-light);
+}
+
+.w95-btn {
+  background: var(--w95-silver);
+  color: #000;
+  user-select: none;
+  cursor: pointer;
+  box-shadow:
+    inset -1px -1px 0 var(--w95-dark),
+    inset 1px 1px 0 var(--w95-white),
+    inset -2px -2px 0 var(--w95-gray),
+    inset 2px 2px 0 var(--w95-silver-light);
+}
+
+.w95-btn:active,
+.w95-btn-active {
+  box-shadow:
+    inset -1px -1px 0 var(--w95-white),
+    inset 1px 1px 0 var(--w95-dark),
+    inset -2px -2px 0 var(--w95-silver-light),
+    inset 2px 2px 0 var(--w95-gray);
+}
+
+.w95-btn:active > * {
+  transform: translate(1px, 1px);
+}
+
+.w95-btn:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -5px;
+}
+
+.w95-btn:disabled {
+  color: var(--w95-gray);
+  text-shadow: 1px 1px 0 var(--w95-white);
+  cursor: not-allowed;
+}
+
+/* Menu-bar items (File Edit View …) */
+.w95-menu-item {
+  padding: 2px 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.w95-menu-item:hover,
+.w95-menu-item:focus-visible {
+  background: var(--w95-navy);
+  color: #fff;
+  outline: none;
+}
+
+/* ============================================================
+   BACKGROUNDS & TEXTURES
+   ============================================================ */
+
+/* The desktop: teal with a whisper of dither */
+.desktop-bg {
+  background-color: var(--w95-desktop);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+.checkerboard {
+  background-image: conic-gradient(#000 25%, #fff 0 50%, #000 0 75%, #fff 0);
+  background-size: 24px 24px;
+}
+
+/* Classic under-construction stripes */
+.construction {
+  background: repeating-linear-gradient(
+    -45deg,
+    #f7d117 0 14px,
+    #141414 14px 28px
+  );
+}
+
+/* Vaporwave sunset sky */
+.vapor-sky {
+  background: linear-gradient(
+    180deg,
+    #1a0533 0%,
+    #45125e 30%,
+    #962b7c 55%,
+    #ff2975 78%,
+    #ffd319 100%
+  );
+}
+
+/* The synthwave sun — masked stripes at the bottom */
+.vapor-sun {
+  background: linear-gradient(180deg, var(--vw-sunset-1) 0%, var(--vw-sunset-2) 60%, var(--vw-sunset-3) 100%);
+  border-radius: 50%;
+  -webkit-mask-image: linear-gradient(#000 0 55%, transparent 55.5% 60%, #000 60.5% 68%, transparent 68.5% 74%, #000 74.5% 82%, transparent 82.5% 90%, #000 90.5% 100%);
+  mask-image: linear-gradient(#000 0 55%, transparent 55.5% 60%, #000 60.5% 68%, transparent 68.5% 74%, #000 74.5% 82%, transparent 82.5% 90%, #000 90.5% 100%);
+}
+
+/* Perspective wireframe floor */
+.vapor-grid {
+  background-image:
+    linear-gradient(rgba(255, 113, 206, 0.7) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 113, 206, 0.7) 2px, transparent 2px);
+  background-size: 48px 48px;
+  transform: perspective(220px) rotateX(52deg) scale(1.6);
+  transform-origin: center top;
+}
+
+/* Backrooms: buzzing yellow wallpaper */
+.backrooms-bg {
+  background-color: #b8a33c;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0 2px, transparent 2px 26px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0 2px, transparent 2px 26px),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 200, 0.35), transparent 70%);
+}
+
+/* ============================================================
+   CRT OVERLAY — subtle scanlines + vignette over everything
+   ============================================================ */
+
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.09) 0px,
+      rgba(0, 0, 0, 0.09) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(ellipse at center, transparent 60%, rgba(10, 2, 30, 0.22) 100%);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* Pointing hand animations (hero) */
 @keyframes point-left {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(var(--point-distance));
-  }
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(var(--point-distance)); }
 }
 
 @keyframes point-right {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(calc(-1 * var(--point-distance)));
-  }
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(calc(-1 * var(--point-distance))); }
 }
 
 .animate-point-left {
@@ -117,87 +328,109 @@ body {
   animation: point-right var(--point-duration) var(--point-easing) infinite;
 }
 
-/* Respect reduced motion preferences */
+/* <marquee> lives again */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+/* Cursor / attention blink — steps() for that hard digital flick */
+@keyframes blink95 {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink95 1.06s steps(1) infinite;
+}
+
+/* Slow float for decorative bits */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+/* Backrooms fluorescent hum */
+@keyframes hum-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.82; }
+  94% { opacity: 1; }
+  97% { opacity: 0.9; }
+  98% { opacity: 1; }
+}
+
+.hum-flicker {
+  animation: hum-flicker 7s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-point-left,
-  .animate-point-right {
+  .animate-point-right,
+  .marquee-track,
+  .blink,
+  .float-y,
+  .hum-flicker {
     animation: none;
   }
 }
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+/* ============================================================
+   ODDS & ENDS
+   ============================================================ */
 
+.pixelated {
+  image-rendering: pixelated;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+/* Anchored sections stop below the sticky browser chrome */
+[id] {
+  scroll-margin-top: 100px;
+}
 
+::selection {
+  background: var(--w95-navy);
+  color: #fff;
+}
+
+/* Win95 scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: repeating-conic-gradient(#fff 0% 25%, var(--w95-silver) 0% 50%);
+  background-size: 2px 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--w95-silver);
+  box-shadow:
+    inset -1px -1px 0 var(--w95-dark),
+    inset 1px 1px 0 var(--w95-white),
+    inset -2px -2px 0 var(--w95-gray),
+    inset 2px 2px 0 var(--w95-silver-light);
+}
+
+::-webkit-scrollbar-button {
+  background: var(--w95-silver);
+  box-shadow:
+    inset -1px -1px 0 var(--w95-dark),
+    inset 1px 1px 0 var(--w95-white),
+    inset -2px -2px 0 var(--w95-gray),
+    inset 2px 2px 0 var(--w95-silver-light);
+  height: 16px;
+  width: 16px;
 }

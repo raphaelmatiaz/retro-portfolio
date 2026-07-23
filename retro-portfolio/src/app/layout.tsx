@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-// import { PressStart2P } from "next/font/google"
+import { Press_Start_2P, VT323 } from "next/font/google";
 
-// const PressStart2PFont = PressStart2P({
-//   subsets: ["latin"],
-//   weight: 400,
-// });
+// Chunky pixel font for headings — pure CRT arcade energy
+const pressStart = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pixel",
+});
 
-import { Geist } from 'next/font/google'
- 
-const geist = Geist({
-  subsets: ['latin'],
-})
+// Terminal font for address bars, counters, green-on-black text
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-terminal",
+});
 
 export const metadata: Metadata = {
   title: "RafaelMatias.dev",
@@ -25,11 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.className}>
-
-        <body>
-          {children}
-        </body>
+    <html lang="en" className={`${pressStart.variable} ${vt323.variable}`}>
+      <body>
+        {children}
+        {/* CRT scanlines + vignette over the whole experience */}
+        <div className="crt-overlay" aria-hidden="true" />
+      </body>
     </html>
   );
 }
