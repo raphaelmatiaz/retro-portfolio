@@ -643,27 +643,6 @@ const KinitoPetBackground: React.FC = () => {
     sunLight.position.set(50, 100, -50);
     scene.add(sunLight);
 
-    // ── Bliss hill backdrop (the Windows XP wallpaper, sky removed) ──
-    // Mirrored-repeat keeps the hills seamless across the whole horizon,
-    // wide enough that the mouse parallax never runs off the edge.
-    const blissTexture = new THREE.TextureLoader().load(
-      "/images/windows-xp-bliss-with-transparent-sky-v0-og1t5nh1in641.webp"
-    );
-    blissTexture.wrapS = THREE.MirroredRepeatWrapping;
-    blissTexture.wrapT = THREE.ClampToEdgeWrapping;
-    blissTexture.repeat.set(4, 1);
-    blissTexture.colorSpace = THREE.SRGBColorSpace;
-
-    const blissGeometry = new THREE.PlaneGeometry(1600, 210);
-    const blissMaterial = new THREE.MeshBasicMaterial({
-      map: blissTexture,
-      transparent: true,
-      depthWrite: false,
-    });
-    const blissPlane = new THREE.Mesh(blissGeometry, blissMaterial);
-    blissPlane.position.set(-140, 58, -280); // far behind the pyramids, crest off-center to the left
-    scene.add(blissPlane);
-
     // ── Minecraft-style blocky clouds ──
     // Each cloud is a chunky voxel blob (noisy ellipse stamped on a grid),
     // generated once at startup, then drifting slowly left and wrapping around.
@@ -921,9 +900,6 @@ const KinitoPetBackground: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousemove", handleMouseMove);
-      blissTexture.dispose();
-      blissGeometry.dispose();
-      blissMaterial.dispose();
       cloudGeometry.dispose();
       cloudMaterial.dispose();
       clouds.forEach((cloud) => cloud.mesh.dispose());
