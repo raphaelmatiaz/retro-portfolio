@@ -643,6 +643,92 @@ const KinitoPetBackground: React.FC = () => {
     sunLight.position.set(50, 100, -50);
     scene.add(sunLight);
 
+    // ── Bliss hill backdrop (the Windows XP wallpaper, sky removed) ──
+    // Mirrored-repeat keeps the hills seamless across the whole horizon,
+    // wide enough that the mouse parallax never runs off the edge.
+    const blissTexture = new THREE.TextureLoader().load(
+      "/images/windows-xp-bliss-with-transparent-sky-v0-og1t5nh1in641.webp"
+    );
+    blissTexture.wrapS = THREE.MirroredRepeatWrapping;
+    blissTexture.wrapT = THREE.ClampToEdgeWrapping;
+    blissTexture.repeat.set(4, 1);
+    blissTexture.colorSpace = THREE.SRGBColorSpace;
+
+    const blissGeometry = new THREE.PlaneGeometry(1600, 210);
+    const blissMaterial = new THREE.MeshBasicMaterial({
+      map: blissTexture,
+      transparent: true,
+      depthWrite: false,
+    });
+    const blissPlane = new THREE.Mesh(blissGeometry, blissMaterial);
+    blissPlane.position.set(0, 95, -280); // far behind the pyramids (which end at z ≈ -230)
+    scene.add(blissPlane);
+
+    // ── Minecraft-style blocky clouds ──
+    // Each cloud is a chunky voxel blob (noisy ellipse stamped on a grid),
+    // generated once at startup, then drifting slowly left and wrapping around.
+    // Minecraft-style face shading baked in as vertex colors:
+    // white tops, dimmer sides, dark bottoms — no lights needed.
+    const cloudGeometry = new THREE.BoxGeometry(1, 1, 1);
+    {
+      // BoxGeometry vertex order: +x, -x, +y (top), -y (bottom), +z, -z — 4 verts per face
+      const faceShades = [0.86, 0.86, 1.0, 0.72, 0.92, 0.92];
+      const cloudColors = new Float32Array(24 * 3);
+      faceShades.forEach((shade, face) => {
+        for (let v = 0; v < 4; v++) {
+          cloudColors.set([shade, shade, shade], (face * 4 + v) * 3);
+        }
+      });
+      cloudGeometry.setAttribute("color", new THREE.BufferAttribute(cloudColors, 3));
+    }
+    const cloudMaterial = new THREE.MeshBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.92,
+    });
+    const CLOUD_CELL = 5;    // horizontal size of one voxel
+    const CLOUD_THICK = 3.5; // one voxel tall, like Minecraft's "fancy" clouds
+    const clouds: Array<{ mesh: THREE.InstancedMesh; speed: number }> = [];
+
+    const buildCloudPattern = (): Array<[number, number]> => {
+      const cols = 6 + Math.floor(Math.random() * 7); // 6–12 voxels wide
+      const rows = 3 + Math.floor(Math.random() * 3); // 3–5 voxels deep
+      const cx = (cols - 1) / 2;
+      const cy = (rows - 1) / 2;
+      const cells: Array<[number, number]> = [];
+      for (let gx = 0; gx < cols; gx++) {
+        for (let gy = 0; gy < rows; gy++) {
+          const dx = (gx - cx) / (cols / 2);
+          const dy = (gy - cy) / (rows / 2);
+          // noisy ellipse → ragged blocky blob
+          if (dx * dx + dy * dy <= 1 + (Math.random() - 0.5) * 0.7) {
+            cells.push([gx - cx, gy - cy]);
+          }
+        }
+      }
+      return cells;
+    };
+
+    const cloudDummy = new THREE.Object3D();
+    for (let i = 0; i < 12; i++) {
+      const cells = buildCloudPattern();
+      const cloudMesh = new THREE.InstancedMesh(cloudGeometry, cloudMaterial, cells.length);
+      cells.forEach(([gx, gz], idx) => {
+        cloudDummy.position.set(gx * CLOUD_CELL, 0, gz * CLOUD_CELL);
+        cloudDummy.scale.set(CLOUD_CELL, CLOUD_THICK, CLOUD_CELL);
+        cloudDummy.updateMatrix();
+        cloudMesh.setMatrixAt(idx, cloudDummy.matrix);
+      });
+      cloudMesh.instanceMatrix.needsUpdate = true;
+      cloudMesh.position.set(
+        Math.random() * 500 - 250,   // spread across the sky
+        Math.random() * 25 + 58,     // above the flying gifs
+        Math.random() * -170 - 60    // between the gifs and the hill
+      );
+      scene.add(cloudMesh);
+      clouds.push({ mesh: cloudMesh, speed: Math.random() * 0.02 + 0.015 });
+    }
+
     // Add your GIF URLs here - each URL will create a floating square!
     const gifUrls = [
       'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2toNHlnZWJzM3BjaHVtZHBpbW13ODY4bjIwZHIwMmlnY3FlYzU1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Hcw7rjsIsHcmk/giphy.gif', // classic keyboard cat
@@ -811,6 +897,14 @@ const KinitoPetBackground: React.FC = () => {
         }
       });
 
+      // Drift the blocky clouds slowly leftwards; wrap for an endless loop
+      for (const cloud of clouds) {
+        cloud.mesh.position.x -= cloud.speed;
+        if (cloud.mesh.position.x < -300) {
+          cloud.mesh.position.x = 300;
+        }
+      }
+
       renderer.render(scene, camera);
     };
     animate();
@@ -827,6 +921,12 @@ const KinitoPetBackground: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousemove", handleMouseMove);
+      blissTexture.dispose();
+      blissGeometry.dispose();
+      blissMaterial.dispose();
+      cloudGeometry.dispose();
+      cloudMaterial.dispose();
+      clouds.forEach((cloud) => cloud.mesh.dispose());
       mountRef.current?.removeChild(renderer.domElement);
       renderer.dispose();
     };
